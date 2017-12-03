@@ -349,7 +349,7 @@ a {
         text-transform: uppercase;
         white-space: nowrap;
         color: #777; }
-        .header--nav__links a:hover, .header--nav__links a:focus {
+        .header--nav__links a:hover, .header--nav__links a:focus, .header--nav__links a.active {
           color: #000; }
         @media (max-width: 1440px) {
           .header--nav__links a {
@@ -507,6 +507,13 @@ a {
         color: #fff;
         text-decoration: none; }
 
+.page--title {
+  font-size: 1.875rem;
+  font-weight: bold;
+  line-height: 120%;
+  text-align: center;
+  margin: 15px 0 40px; }
+
 .blog-pager {
   margin: 30px 0; }
   .blog-pager .pagecurrent {
@@ -519,13 +526,13 @@ a {
     color: #333; }
   .blog-pager .displaypageNum, .blog-pager .firstpage {
     display: inline-block;
-    vertical-align: top; }
+    vertical-align: top;
+    margin: 0 5px; }
     .blog-pager .displaypageNum a, .blog-pager .firstpage a {
-      min-width: 36px;
+      min-width: 34px;
       padding: 0 13px;
       line-height: 36px;
       border: 1px solid transparent;
-      border-radius: 18px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
