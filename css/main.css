@@ -410,9 +410,13 @@ a {
   max-width: 85ch;
   margin: 0 auto; }
   .post + .post {
-    margin-top: 25px;
-    padding-top: 25px;
+    margin-top: 35px;
+    padding-top: 40px;
     border-top: 1px solid #ddd; }
+    @media (max-width: 767px) {
+      .post + .post {
+        margin-top: 15px;
+        padding-top: 20px; } }
   .post--date {
     font-size: 0.8125rem;
     font-weight: 300;
@@ -422,6 +426,7 @@ a {
   .post--title {
     font-size: 1.875rem;
     font-weight: bold;
+    line-height: 120%;
     text-align: center;
     margin: 15px 0 40px; }
   .post a {
@@ -508,11 +513,10 @@ a {
     height: 36px;
     width: 36px;
     line-height: 36px;
-    border: 1px solid #888;
-    border-radius: 18px;
+    border: 1px solid #ddd;
     text-align: center;
     display: inline-block;
-    color: #000; }
+    color: #333; }
   .blog-pager .displaypageNum, .blog-pager .firstpage {
     display: inline-block;
     vertical-align: top; }
@@ -528,7 +532,8 @@ a {
       color: #666;
       transition: all .3s ease; }
       .blog-pager .displaypageNum a:hover, .blog-pager .displaypageNum a:focus, .blog-pager .firstpage a:hover, .blog-pager .firstpage a:focus {
-        border-color: #888;
+        color: #888;
+        border-color: #ddd;
         text-decoration: none; }
   .blog-pager .showpageOf, .blog-pager .lastpage {
     display: none; }
