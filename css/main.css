@@ -465,38 +465,18 @@ a {
     color: #000; }
     .post--text .separator {
       position: relative;
-      overflow: hidden;
-      height: 54vh;
-      min-height: 320px;
-      max-height: 540px; }
-      @media (max-width: 992px) {
-        .post--text .separator {
-          min-height: 0;
-          height: auto; } }
+      overflow: hidden; }
       .post--text .separator img {
         display: block;
         height: auto;
         width: 100%;
-        position: absolute;
-        top: 50%;
-        left: 0;
-        -ms-transform: translateY(-50%) scale(1);
-            transform: translateY(-50%) scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
         transition: transform .5s linear; }
-        @media (max-width: 992px) {
-          .post--text .separator img {
-            position: relative;
-            top: auto;
-            -ms-transform: scale(1);
-                transform: scale(1); } }
       .post--text .separator:hover img, .post--text .separator:focus img {
-        -ms-transform: translateY(-50%) scale(1.25);
-            transform: translateY(-50%) scale(1.25);
+        -ms-transform: scale(1.25);
+            transform: scale(1.25);
         transition: transform 4s linear; }
-        @media (max-width: 992px) {
-          .post--text .separator:hover img, .post--text .separator:focus img {
-            -ms-transform: scale(1.25);
-                transform: scale(1.25); } }
   .post--button {
     text-align: center;
     margin: 50px 0; }
