@@ -472,6 +472,8 @@ a {
     font-family: 'PT Serif', sans-serif;
     font-size: 1rem;
     color: #000; }
+    .post--text h2, .post--text h3, .post--text ul, .post--text ol {
+      margin: 20px 0; }
     .post--text .separator {
       position: relative;
       overflow: hidden; }
@@ -519,7 +521,7 @@ a {
   .blog-pager .pagecurrent {
     height: 36px;
     width: 36px;
-    line-height: 36px;
+    line-height: 34px;
     border: 1px solid #ddd;
     text-align: center;
     display: inline-block;
@@ -531,7 +533,7 @@ a {
     .blog-pager .displaypageNum a, .blog-pager .firstpage a {
       min-width: 34px;
       padding: 0 13px;
-      line-height: 36px;
+      line-height: 34px;
       border: 1px solid transparent;
       text-align: center;
       text-decoration: none;
