@@ -332,7 +332,7 @@ a {
         @media (max-width: 1200px) {
           .header--nav__links > li {
             background-color: #fff; }
-            .header--nav__links > li:nth-of-type(n+2) a {
+            .header--nav__links > li:nth-of-type(n+2) .widget > a {
               width: calc(100% - 55px);
               padding: 13px 5px 13px 20px; } }
         .header--nav__links > li:hover span {
@@ -474,6 +474,8 @@ a {
     color: #000; }
     .post--text h2, .post--text h3, .post--text ul, .post--text ol {
       margin: 20px 0; }
+    .post--text ul li + li, .post--text ol li + li {
+      margin-top: 7px; }
     .post--text .separator {
       position: relative;
       overflow: hidden; }
