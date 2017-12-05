@@ -49,7 +49,7 @@ $(function(){
 		gallery: function(done) {
 			$('.entry-content').removeClass('hidden');
 			var contentItems = this.contents.split('>'), sumArray = [];
-			for (var i = contentItems.length - 1; i >= 0; i--) {
+			for (var i = 0; i < contentItems.length; i++) {
 				if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
 			};
 			if(sumArray.length>0) {
