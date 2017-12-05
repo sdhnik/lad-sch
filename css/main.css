@@ -83,11 +83,6 @@ a {
   transition-duration: 0.35s;
   transition-timing-function: ease; }
 
-.lightSlider img {
-  display: block;
-  height: auto;
-  width: 100%; }
-
 .header {
   position: relative;
   padding-top: 75px;
@@ -491,10 +486,16 @@ a {
         -ms-transform: scale(1);
             transform: scale(1);
         transition: transform .5s linear; }
-      .post--text .separator:hover img, .post--text .separator:focus img {
+      .post--text .separator:hover > img, .post--text .separator:focus > img {
         -ms-transform: scale(1.25);
             transform: scale(1.25);
         transition: transform 4s linear; }
+    .post--text .lightSlider {
+      margin: 0; }
+      .post--text .lightSlider img {
+        display: block;
+        height: auto;
+        width: 100%; }
   .post--button {
     text-align: center;
     margin: 50px 0; }
