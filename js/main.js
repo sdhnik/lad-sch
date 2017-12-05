@@ -38,12 +38,44 @@ $(function(){
 
 	function toggleSidebar() {
 		$(".header--nav__toggle").toggleClass("active");
-		//$("main").toggleClass("move-to-left");
 		$(".header--nav__links").toggleClass("active");
 	}
 
 	$(".header--nav__toggle").on("click tap", function() {
 		toggleSidebar();
 	});
+
+	new Shortcode(document.querySelector('body'), {
+		gallery: function(done) {
+			$('.entry-content').removeClass('hidden');
+			var contentItems = this.contents.split('>'), sumArray = [];
+			for (var i = contentItems.length - 1; i >= 0; i--) {
+				if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
+			};
+			if(sumArray.length>0) {
+				var sumHTML = '<ul class="gallerySlider">';
+				for (var i = 0; i < sumArray.length; i++) {
+					sumHTML += '<li>'+sumArray[i]+'</li>';
+				};
+				sumHTML += "</ul>";
+
+				return sumHTML;
+			} else {
+				return this.contents;
+			}
+		}
+	}, function(e){
+		$('.entry-content').removeClass('hidden');
+	});
+
+	$('.gallerySlider').lightSlider({
+        adaptiveHeight:true,
+        item:1,
+        slideMargin:0,
+        loop:true,
+        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        speed:600,
+        pager: false
+    });
 
 });

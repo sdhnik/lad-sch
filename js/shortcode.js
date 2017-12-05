@@ -7,11 +7,12 @@
 
 /* jshint strict: false, unused: false */
 
-var Shortcode = function(el, tags) {
+var Shortcode = function(el, tags, callback) {
   if (!el) { return; }
 
   this.el      = el;
   this.tags    = tags;
+  this.callback = callback;
   this.matches = [];
   this.regex   = '\\[{name}(\\s[\\s\\S]*?)?\\]' +
     '(?:((?!\\s*?(?:\\[{name}|\\[\\/(?!{name})))[\\s\\S]*?)' +
@@ -57,6 +58,7 @@ Shortcode.prototype.matchTags = function() {
       });
     }
   }
+  if(this.matches.length === 0) this.callback.call(this);
 };
 
 Shortcode.prototype.convertMatchesToNodes = function() {

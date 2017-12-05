@@ -83,6 +83,11 @@ a {
   transition-duration: 0.35s;
   transition-timing-function: ease; }
 
+.lightSlider img {
+  display: block;
+  height: auto;
+  width: 100%; }
+
 .header {
   position: relative;
   padding-top: 75px;
