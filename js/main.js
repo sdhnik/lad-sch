@@ -2,6 +2,39 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 
 $(function(){
 
+	new Shortcode(document.querySelector('body'), {
+		gallery: function(done) {
+			$('.entry-content').removeClass('hidden');
+			var contentItems = this.contents.split('>'), sumArray = [];
+			for (var i = 0; i < contentItems.length; i++) {
+				if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
+			};
+			if(sumArray.length>0) {
+				var sumHTML = '<ul class="gallerySlider">';
+				for (var i = 0; i < sumArray.length; i++) {
+					sumHTML += '<li>'+sumArray[i]+'</li>';
+				};
+				sumHTML += "</ul>";
+
+				return sumHTML;
+			} else {
+				return this.contents;
+			}
+		}
+	}, function(e){
+		$('.entry-content').removeClass('hidden');
+	});
+
+	$('.gallerySlider').lightSlider({
+        adaptiveHeight:true,
+        item:1,
+        slideMargin:0,
+        loop:true,
+        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
+        speed:600,
+        pager: false
+    });
+
 	fastCollapse($("#navLink1"), $("#subNav1"), 1);
 	fastCollapse($("#navLink2"), $("#subNav2"), 2);
 	fastCollapse($("#navLink3"), $("#subNav3"), 3);
@@ -37,45 +70,13 @@ $(function(){
 	}
 
 	function toggleSidebar() {
+		$(".header").toggleClass("overflow-hidden");
 		$(".header--nav__toggle").toggleClass("active");
 		$(".header--nav__links").toggleClass("active");
 	}
 
-	$(".header--nav__toggle").on("click tap", function() {
+	$(".header--nav__toggle").on("click tap", function(e) {
 		toggleSidebar();
 	});
-
-	new Shortcode(document.querySelector('body'), {
-		gallery: function(done) {
-			$('.entry-content').removeClass('hidden');
-			var contentItems = this.contents.split('>'), sumArray = [];
-			for (var i = 0; i < contentItems.length; i++) {
-				if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
-			};
-			if(sumArray.length>0) {
-				var sumHTML = '<ul class="gallerySlider">';
-				for (var i = 0; i < sumArray.length; i++) {
-					sumHTML += '<li>'+sumArray[i]+'</li>';
-				};
-				sumHTML += "</ul>";
-
-				return sumHTML;
-			} else {
-				return this.contents;
-			}
-		}
-	}, function(e){
-		$('.entry-content').removeClass('hidden');
-	});
-
-	$('.gallerySlider').lightSlider({
-        adaptiveHeight:true,
-        item:1,
-        slideMargin:0,
-        loop:true,
-        easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
-        speed:600,
-        pager: false
-    });
 
 });
