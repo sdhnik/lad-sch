@@ -557,3 +557,42 @@ a {
         text-decoration: none; }
   .blog-pager .showpageOf, .blog-pager .lastpage {
     display: none; }
+
+.page--opendoc {
+  list-style: none; }
+  .page--opendoc li {
+    position: relative;
+    margin: 40px 0; }
+    .page--opendoc li:before {
+      content: '';
+      font-family: FontAwesome;
+      font-size: 30px;
+      line-height: 1;
+      position: absolute;
+      top: -5px;
+      left: -40px;
+      opacity: .4; }
+    .page--opendoc li h3 {
+      line-height: 120%;
+      margin: 0; }
+    .page--opendoc li p {
+      font-style: italic;
+      margin: 7px 0 0; }
+    .page--opendoc li a {
+      background-color: #222;
+      color: #fff;
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      padding: 0 15px;
+      margin-top: 10px;
+      text-transform: uppercase;
+      font-family: 'Open Sans', Arial, sans-serif;
+      font-size: 0.75rem;
+      font-style: normal;
+      transition: background-color .3s ease; }
+      .page--opendoc li a:hover, .page--opendoc li a:focus {
+        background-color: rgba(34, 34, 34, 0.8);
+        color: #fff; }
+      .page--opendoc li a + a {
+        margin-left: 5px; }
