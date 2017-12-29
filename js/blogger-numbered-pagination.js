@@ -31,21 +31,6 @@
 			}
 		}
 
-		if (currentPageNo > 2) {
-            if (currentPageNo == 3) {
-                if (currentPage == "page") {
-                    html += '<span class="showpage"><a href="' + home_page + '">' + prevText + '</a></span>'
-                } else {
-                    html += '<span class="displaypageNum"><a href="/search/label/' + postLabel + '?&max-results=' + perPage + '">' + prevText + '</a></span>'
-                }
-            } else {
-                if (currentPage == "page") {
-                    html += '<span class="displaypageNum"><a href="#" onclick="redirectpage(' + prevNumber + ');return false">' + prevText + '</a></span>'
-                } else {
-                    html += '<span class="displaypageNum"><a href="#" onclick="redirectlabel(' + prevNumber + ');return false">' + prevText + '</a></span>'
-                }
-            }
-        }
         if (pageStart > 1) {
             if (currentPage == "page") {
                 html += '<span class="displaypageNum"><a href="' + home_page + '">1</a></span>'
