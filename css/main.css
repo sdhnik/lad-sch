@@ -710,6 +710,8 @@ button.close {
         color: #888;
         border-color: #ddd;
         text-decoration: none; }
+  .blog-pager .firstpage + .showpage {
+    display: none; }
   .blog-pager .showpageOf, .blog-pager .lastpage {
     display: none; }
 
