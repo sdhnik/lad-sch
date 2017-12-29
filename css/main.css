@@ -692,11 +692,11 @@ button.close {
     text-align: center;
     display: inline-block;
     color: #333; }
-  .blog-pager .displaypageNum, .blog-pager .firstpage {
+  .blog-pager .displaypageNum, .blog-pager .firstpage, .blog-pager .firstpage + .showpage {
     display: inline-block;
     vertical-align: top;
     margin: 0 5px; }
-    .blog-pager .displaypageNum a, .blog-pager .firstpage a {
+    .blog-pager .displaypageNum a, .blog-pager .firstpage a, .blog-pager .firstpage + .showpage a {
       min-width: 34px;
       padding: 0 13px;
       line-height: 34px;
@@ -706,12 +706,10 @@ button.close {
       display: inline-block;
       color: #666;
       transition: all .3s ease; }
-      .blog-pager .displaypageNum a:hover, .blog-pager .displaypageNum a:focus, .blog-pager .firstpage a:hover, .blog-pager .firstpage a:focus {
+      .blog-pager .displaypageNum a:hover, .blog-pager .displaypageNum a:focus, .blog-pager .firstpage a:hover, .blog-pager .firstpage a:focus, .blog-pager .firstpage + .showpage a:hover, .blog-pager .firstpage + .showpage a:focus {
         color: #888;
         border-color: #ddd;
         text-decoration: none; }
-  .blog-pager .firstpage + .showpage {
-    display: none; }
   .blog-pager .showpageOf, .blog-pager .lastpage {
     display: none; }
 
