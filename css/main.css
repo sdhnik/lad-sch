@@ -919,3 +919,32 @@ button.close {
     margin-bottom: 5px; }
   .teacher-person-text p {
     margin: 0 0 5px; }
+
+.mo {
+  margin-bottom: 30px; }
+  .mo-img {
+    overflow: hidden; }
+    .mo-img img {
+      height: auto;
+      width: 100%;
+      -ms-transform: scale(1);
+          transform: scale(1);
+      transition: transform .5s linear; }
+    .mo-img:hover img, .mo-img:focus img {
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
+      transition: transform 4s linear; }
+  .mo-link a {
+    border: 1px solid #aaa;
+    display: inline-block;
+    line-height: 28px;
+    padding: 0 15px;
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 0.75rem;
+    font-style: normal;
+    transition: background-color .3s ease, color .3s ease; }
+    .mo-link a:hover, .mo-link a:focus {
+      background-color: #aaa;
+      color: #fff; }
