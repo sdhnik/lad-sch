@@ -948,3 +948,21 @@ button.close {
     .mo-link a:hover, .mo-link a:focus {
       background-color: #aaa;
       color: #fff; }
+
+.gurtok {
+  margin-bottom: 30px; }
+  .gurtok-img {
+    overflow: hidden; }
+    .gurtok-img img {
+      height: auto;
+      width: 100%;
+      -ms-transform: scale(1);
+          transform: scale(1);
+      transition: transform .5s linear; }
+    .gurtok-img:hover img, .gurtok-img:focus img {
+      -ms-transform: scale(1.25);
+          transform: scale(1.25);
+      transition: transform 4s linear; }
+  .gurtok-teacher {
+    font-size: 1.125rem;
+    margin-bottom: 40px; }
