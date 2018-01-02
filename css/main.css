@@ -966,3 +966,30 @@ button.close {
   .gurtok-teacher {
     font-size: 1.125rem;
     margin-bottom: 40px; }
+
+.sam-img {
+  overflow: hidden; }
+  .sam-img img {
+    height: auto;
+    width: 100%; }
+  .sam-img-100, .sam-img-50 {
+    margin: 20px 0; }
+    @media (max-width: 992px) {
+      .sam-img-100, .sam-img-50 {
+        margin: 15px 0; } }
+  .sam-img-50 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    -ms-flex-align: center;
+        align-items: center; }
+    .sam-img-50 .sam-img {
+      width: 49%; }
+    @media (max-width: 992px) {
+      .sam-img-50 {
+        display: block; }
+        .sam-img-50 .sam-img {
+          width: 100%; }
+          .sam-img-50 .sam-img + .sam-img {
+            margin-top: 15px; } }
