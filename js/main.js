@@ -4,28 +4,35 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 
 $(function(){
 
-	new Shortcode(document.querySelectorAll('.entry-content'), {
-		gallery: function(done) {
-			$('.entry-content').removeClass('hidden');
-			var contentItems = this.contents.split('>'), sumArray = [];
-			for (var i = 0; i < contentItems.length; i++) {
-				if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
-			};
-			if(sumArray.length>0) {
-				var sumHTML = '<ul class="gallerySlider">';
-				for (var i = 0; i < sumArray.length; i++) {
-					sumHTML += '<li>'+sumArray[i]+'</li>';
-				};
-				sumHTML += "</ul>";
+	var listPost = document.querySelectorAll('.entry-content');
 
-				return sumHTML;
-			} else {
-				return this.contents;
+	for (var j = 0; j < listPost.length; j++) {
+
+		new Shortcode(listPost[j], {
+			gallery: function(done) {
+				$('.entry-content').removeClass('hidden');
+				var contentItems = this.contents.split('>'), sumArray = [];
+				for (var i = 0; i < contentItems.length; i++) {
+					if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
+				};
+				if(sumArray.length>0) {
+					var sumHTML = '<ul class="gallerySlider">';
+					for (var i = 0; i < sumArray.length; i++) {
+						sumHTML += '<li>'+sumArray[i]+'</li>';
+					};
+					sumHTML += "</ul>";
+
+					return sumHTML;
+				} else {
+					return this.contents;
+				}
 			}
-		}
-	}, function(e){
-		$('.entry-content').removeClass('hidden');
-	});
+		}, function(e){
+			$('.entry-content').removeClass('hidden');
+		});
+	};
+
+
 
 	$('.gallerySlider').lightSlider({
         adaptiveHeight:true,
