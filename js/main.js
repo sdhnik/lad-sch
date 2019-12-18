@@ -4,7 +4,7 @@ if("undefined"==typeof jQuery)throw new Error("Bootstrap's JavaScript requires j
 
 $(function(){
 
-	new Shortcode(document.querySelector('body'), {
+	new Shortcode(document.querySelectorAll('.entry-content'), {
 		gallery: function(done) {
 			$('.entry-content').removeClass('hidden');
 			var contentItems = this.contents.split('>'), sumArray = [];
