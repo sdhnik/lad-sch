@@ -24,7 +24,7 @@ $(function(){
 
 				galleryItem.innerHTML = sumHTML;
 			}
-			listPost[j].removeClass('hidden');
+			listPost[j].classList.remove('hidden');
 		} else {
 			new Shortcode(listPost[j], {
 				gallery: function(done) {
