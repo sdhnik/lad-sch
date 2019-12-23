@@ -8,28 +8,49 @@ $(function(){
 
 	for (var j = 0; j < listPost.length; j++) {
 
-		new Shortcode(listPost[j], {
-			gallery: function(done) {
-				$('.entry-content').removeClass('hidden');
-				var contentItems = this.contents.split('>'), sumArray = [];
-				for (var i = 0; i < contentItems.length; i++) {
-					if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
-				};
-				if(sumArray.length>0) {
-					var sumHTML = '<ul class="gallerySlider">';
-					for (var i = 0; i < sumArray.length; i++) {
-						sumHTML += '<li>'+sumArray[i]+'</li>';
-					};
-					sumHTML += "</ul>";
+		var galleryItem = listPost[j].querySelector('.gallery-body');
 
-					return sumHTML;
-				} else {
-					return this.contents;
-				}
+		if(galleryItem) {
+			var galleryItemContent = galleryItem.innerHTML, contentItems = galleryItemContent.split('>'), sumArray = [];
+			for (var i = 0; i < contentItems.length; i++) {
+				if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
+			};
+			if(sumArray.length>0) {
+				var sumHTML = '<ul class="gallerySlider">';
+				for (var i = 0; i < sumArray.length; i++) {
+					sumHTML += '<li>'+sumArray[i]+'</li>';
+				};
+				sumHTML += "</ul>";
+
+				galleryItem.innerHTML = sumHTML;
 			}
-		}, function(e){
-			$('.entry-content').removeClass('hidden');
-		});
+			listPost[j].removeClass('hidden');
+		} else {
+			new Shortcode(listPost[j], {
+				gallery: function(done) {
+					$('.entry-content').removeClass('hidden');
+					var contentItems = this.contents.split('>'), sumArray = [];
+					for (var i = 0; i < contentItems.length; i++) {
+						if($(contentItems[i]+'>').filter('img').length > 0) sumArray.push(contentItems[i]+'>');
+					};
+					if(sumArray.length>0) {
+						var sumHTML = '<ul class="gallerySlider">';
+						for (var i = 0; i < sumArray.length; i++) {
+							sumHTML += '<li>'+sumArray[i]+'</li>';
+						};
+						sumHTML += "</ul>";
+
+						return sumHTML;
+					} else {
+						return this.contents;
+					}
+				}
+			}, function(e){
+				$('.entry-content').removeClass('hidden');
+			});
+		}
+
+
 	};
 
 
